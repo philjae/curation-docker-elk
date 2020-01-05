@@ -1,1 +1,5 @@
+#password file
 password.txt
+
+#kibana config
+kibana/config/kibana.yml

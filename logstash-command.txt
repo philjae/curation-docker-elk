@@ -1,0 +1,2 @@
+bin/logstash -e "input { stdin {} } output { stdout { } }"
+bin/logstash -f pipeline/logstash.conf --config.reload.automatic

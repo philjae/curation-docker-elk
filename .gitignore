@@ -1,8 +1,5 @@
-#password file
+#Password
 password.txt
 
-#kibana config
-kibana/config/kibana.yml
-
-#logstash config
-logstash/config/logstash.yml
+#Data foler
+event-data/

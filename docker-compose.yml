@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.2"
 
 services:
   elasticsearch:
@@ -19,7 +19,6 @@ services:
       - "9300:9300"
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-      ELASTIC_PASSWORD: changeme
       # Use single node discovery in order to disable production mode and avoid bootstrap checks
       # see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
@@ -40,11 +39,17 @@ services:
         source: ./logstash/pipeline
         target: /usr/share/logstash/pipeline
         read_only: true
+      #customized logstash pipiline config
+      - type: bind
+        source: ./logstash/event-data
+        target: /usr/share/logstash/event-data
     ports:
       - "5000:5000"
+      #- "8080:8080" # logstash for http input
       - "9600:9600"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      #ELASTIC_PASSWORD: changeme
     networks:
       - elk
     depends_on:

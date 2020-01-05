@@ -3,3 +3,6 @@ password.txt
 
 #kibana config
 kibana/config/kibana.yml
+
+#logstash config
+logstash/config/logstash.yml

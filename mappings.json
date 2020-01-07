@@ -1,0 +1,28 @@
+PUT site_click_log/
+{
+  "mappings" : {
+    "properties" : {
+      "dt" : {
+        "type" : "integer"
+      },
+      "hr" : {
+        "type" : "integer"
+      },
+      "insTimestamp" : {
+        "type" : "integer"
+      },
+      "itemId" : {
+        "type" : "keyword"
+      },
+      "keyword" : {
+        "type" : "keyword"
+      },
+      "loginId" : {
+        "type" : "keyword"
+      },
+      "site" : {
+        "type" : "keyword"
+      }
+    }
+  }
+}

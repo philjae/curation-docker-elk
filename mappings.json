@@ -1,15 +1,30 @@
-PUT /site_click_log
-{
+PUT / site_click_log {
   "mappings": {
     "properties": {
-      "id":    { "type": "keyword" },  
-      "dt":  { "type": "integer"  }, 
-      "hr":   { "type": "integer"  },
-      "insTimestamp": { "type": "long" },
-      "itemId": { "type": "keyword" },
-      "keyword": { "type": "keyword" },
-      "loginId": { "type": "keyword" },
-      "site": { "type": "keyword" }
+      "id": {
+        "type": "keyword"
+      },
+      "dt": {
+        "type": "integer"
+      },
+      "hr": {
+        "type": "integer"
+      },
+      "insTimestamp": {
+        "type": "long"
+      },
+      "itemId": {
+        "type": "keyword"
+      },
+      "keyword": {
+        "type": "keyword"
+      },
+      "loginId": {
+        "type": "keyword"
+      },
+      "site": {
+        "type": "keyword"
+      }
     }
   }
 }

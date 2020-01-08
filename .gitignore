@@ -2,8 +2,5 @@
 password.txt
 
 #Data foler
+data/
 event-data/
-
-#Logstah config foler
-logstash/config_win
-logstash/data

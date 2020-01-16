@@ -1,0 +1,9 @@
+GET /site_click_log/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "pasta",
+      "fields": ["keyword", "loginId"]
+    }
+  }
+}

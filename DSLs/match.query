@@ -1,0 +1,17 @@
+GET /site_click_log/_search
+{
+  "query": {
+    "match": {
+      "keyword": "pasta"
+    }
+  }
+}
+
+GET /site_click_log/_search
+{
+  "query": {
+    "match": {
+      "keyword": "딜"
+    }
+  }
+}

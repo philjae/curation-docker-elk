@@ -1,0 +1,21 @@
+GET /site_click_log/_search
+{
+  "query": {
+    "wildcard": {
+      "keyword": {
+        "value": "ip*ne"
+      }
+    }
+  }
+}
+
+GET /site_click_log/_search
+{
+  "query": {
+    "wildcard": {
+      "keyword": {
+        "value": "ip?ne"
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+GET /_cat/indices
+
+GET /site_click_log/_mapping
+
+GET /site_click_log/_search
+{
+  "query": {
+    "range": {
+      "insTimestamp": {
+        "lt": "2019/10/01"
+      }
+    }
+  }
+}
+
+GET /site_click_log/_search
+{
+  "query": {
+    "bool": {
+      "must":[
+        {
+          "match": {
+            "keyword": {
+              "query": "pasta",
+              "_name": "pasta_must"
+            }
+          }
+        }
+        ],
+        "must_not": [
+          {
+            "match": {
+              "loginId": {
+                "query": "seancholsw",
+                "_name": "seancholsw_must_not"
+              }
+            }
+          }
+        ], 
+        "should": [
+          {
+            "match": {
+              "keyword": "watch"
+            }
+          }
+        ], 
+        "filter":[{
+            "range": {
+            "dt":{
+              "gt": 20190000
+                }
+            }
+        }]
+    }
+  }
+}

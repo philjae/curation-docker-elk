@@ -1,0 +1,108 @@
+GET /site_click_log/_search
+{
+  "query": {
+    "bool": {
+      "must":[
+        {"match": {
+          "keyword": "pasta"
+          }
+        },
+        {
+          "range": {
+            "dt":{
+              "gt": 20190000
+            }
+          }
+        }
+        ]
+    }
+  }
+}
+
+
+GET /site_click_log/_search
+{
+  "query": {
+    "bool": {
+      "must":[
+        {
+          "match": {
+            "keyword": "pasta"
+          }
+        }
+        ],
+        "filter":[{
+            "range": {
+            "dt":{
+              "gt": 20190000
+                }
+            }
+        }]
+    }
+  }
+}
+
+GET /site_click_log/_search
+{
+  "query": {
+    "bool": {
+      "must":[
+        {
+          "match": {
+            "keyword": "pasta"
+          }
+        }
+        ],
+        "must_not": [
+          {
+            "match": {
+              "loginId": "seancholsw"
+            }
+          }
+        ], 
+        "filter":[{
+            "range": {
+            "dt":{
+              "gt": 20190000
+                }
+            }
+        }]
+    }
+  }
+}
+
+GET /site_click_log/_search
+{
+  "query": {
+    "bool": {
+      "must":[
+        {
+          "match": {
+            "keyword": "pasta"
+          }
+        }
+        ],
+        "must_not": [
+          {
+            "match": {
+              "loginId": "seancholsw"
+            }
+          }
+        ], 
+        "should": [
+          {
+            "match": {
+              "keyword": "watch"
+            }
+          }
+        ], 
+        "filter":[{
+            "range": {
+            "dt":{
+              "gt": 20190000
+                }
+            }
+        }]
+    }
+  }
+}

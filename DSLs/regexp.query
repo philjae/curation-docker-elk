@@ -1,0 +1,10 @@
+GET /site_click_log/_search
+{
+  "query": {
+    "regexp": {
+      "keyword": {
+        "value": "ip[a-zA-Z]+ne"
+      }
+    }
+  }
+}
